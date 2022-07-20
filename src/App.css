@@ -1,0 +1,62 @@
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.headerLink {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.headerLink a {
+  margin: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+
+}
+
+.routingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 600px;
+}
+
+.App {
+  background-image: url('https://abrakadabra.fun/uploads/posts/2022-01/thumbs/1641086689_36-abrakadabra-fun-p-anime-fon-ulitsa-nochyu-pereulok-46.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalField {
+  width: 300px;
+  height: 450px;
+  background-color: white;
+  border-radius: 5px;
+  opacity: .8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,25 @@
+.profile {
+    width: 80vw;
+    height: 600px;
+    border-radius: 5px;
+    background-color: white;
+    opacity: .9;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileInfo {
+    width: 20%;
+    height: 300px;
+    background-color: rgb(87, 141, 87);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profilePackLists {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}

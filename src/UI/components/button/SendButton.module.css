@@ -1,0 +1,14 @@
+.sendButton {
+    width: auto;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(78, 137, 78);
+    color: white;
+    transition: all .9s;
+    cursor: pointer;
+    padding: 0 30px;
+}
+
+.sendButton:hover {
+    background-color: rgb(44, 143, 44);
+}
