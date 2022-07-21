@@ -3,17 +3,19 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { loginTC } from "../../../BLL/loginReducer";
+import { ProgressType } from "../../../BLL/progressReducer";
 import { AppRootStateType } from "../../../BLL/store";
 import { API } from "../../../DAL/api";
 import { SendButton } from "../../components/button/SendButton";
 import { Input } from "../../components/input/Input";
+import { Progress } from "../../components/progress/Progress";
 import s from './LoginPage.module.css'
 
 export const LoginPage = () => {
 
     const dispatch = useDispatch()
     const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.auth)
-    const navigate = useNavigate()
+    const progress = useSelector<AppRootStateType, ProgressType>(state => state.progress.progress)
 
     const formik = useFormik({
         initialValues: {
@@ -25,13 +27,15 @@ export const LoginPage = () => {
             dispatch(loginTC(values.email, values.password, !!values.rememberMe))
         }
     })
-    const redirect = () => {
-        <Navigate to='/register' />
+
+    if (progress === 'progress') {
+        return <Progress/>
     }
 
     if (isAuth) {
         return <Navigate to='/profile' />
     }
+
 
     return (
         <div className="loginPage">

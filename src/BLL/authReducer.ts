@@ -19,8 +19,3 @@ export const authReducer = (state: InitialStateType = initialState, action: Acti
 type AuthActiontype = ReturnType<typeof authAC>
 export const authAC = (isAuth: boolean) => ({ type: 'AUTH', isAuth } as const)
 
-export const authTC = (isAuth: boolean): any => {
-    return (dispatch: any) => {
-
-    }
-}

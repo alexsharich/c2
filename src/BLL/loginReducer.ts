@@ -2,6 +2,7 @@ import { Dispatch } from "redux"
 import { API } from "../DAL/api"
 import { authAC } from "./authReducer"
 import { setProfileAC } from "./profileReducer"
+import { progressAC } from "./progressReducer"
 
 type ActionType = LoginActionType
 
@@ -49,16 +50,24 @@ export const loaginAC = (data: any) => ({ type: 'LOGIN', data } as const)
 
 export const loginTC = (email: string, password: string, rememberMe: boolean): any => {
     return (dispatch: any) => {
+        dispatch(progressAC('progress'))
         API.login(email, password, rememberMe)
             .then(res => {
                 dispatch(authAC(true))
                 dispatch(setProfileAC(res.data))
             })
+            .finally(() => {
+                dispatch(progressAC(null))
+            })
     }
 }
 export const logoutTC = (): any => (dispatch: any) => {
+    dispatch(progressAC('progress'))
     API.logout()
         .then(res => {
-            dispatch(authAC(false))           
+            dispatch(authAC(false))
+        })
+        .finally(() => {
+            dispatch(progressAC(null))
         })
 }

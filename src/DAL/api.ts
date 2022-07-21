@@ -17,7 +17,7 @@ export const API = {
         return instance.delete('auth/me')
     },
     registration(email: string, password: string) {
-        return instance.post('auth/register', { email, password })
+        return instance.post('auth/register', { email: "nya-admin@nya.nya", password: "1qazxcvBG" })
     },
     authMe() {
         return instance.post('auth/me')

@@ -4,12 +4,14 @@ import { authReducer } from "./authReducer";
 import { changePasswordReducer } from "./changePasswordReducer";
 import { loginReducer } from "./loginReducer";
 import { profileReducer } from "./profileReducer";
+import { progressReducer } from "./progressReducer";
 import { registrationReducer } from "./registrationReducer";
 
 const rootReducer = combineReducers({
     login: loginReducer,
     profile:profileReducer,
-    auth:authReducer
+    auth:authReducer,
+    progress:progressReducer
   /*   registration:registrationReducer,
     profile:profileReducer,
     changePassword:changePasswordReducer */

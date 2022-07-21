@@ -2,15 +2,18 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { logoutTC } from "../../../BLL/loginReducer";
+import { ProgressType } from "../../../BLL/progressReducer";
 import { AppRootStateType } from "../../../BLL/store";
 import { SendButton } from "../../components/button/SendButton";
+import { Progress } from "../../components/progress/Progress";
 import s from './LogOutPage.module.css'
 
 export const LogoutPage = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const auth = useSelector<AppRootStateType,boolean>(state=>state.auth.auth)
+    const auth = useSelector<AppRootStateType, boolean>(state => state.auth.auth)
+    const progress = useSelector<AppRootStateType,ProgressType>(state=>state.progress.progress)
 
     const logout = () => {
         dispatch(logoutTC())
@@ -19,8 +22,12 @@ export const LogoutPage = () => {
         navigate('/profile')
     }
 
-    if(!auth){
-        return <Navigate to='/login'/>
+    if (progress === 'progress') {
+        return <Progress />
+    }
+
+    if (!auth) {
+        return <Navigate to='/login' />
     }
 
 

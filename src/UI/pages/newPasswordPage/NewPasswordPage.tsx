@@ -1,9 +1,20 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { ProgressType } from "../../../BLL/progressReducer";
+import { AppRootStateType } from "../../../BLL/store";
 import { SendButton } from "../../components/button/SendButton";
 import { Input } from "../../components/input/Input";
+import { Progress } from "../../components/progress/Progress";
 import s from './NewPasswordPage.module.css'
 
 export const NewPasswordPage = () => {
+
+    const progress = useSelector<AppRootStateType,ProgressType>(state=>state.progress.progress)
+
+    if (progress === 'progress') {
+        return <Progress/>
+    }
+
     return (
         <div className="modalField">
             <div>
