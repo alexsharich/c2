@@ -34,14 +34,12 @@ type InitialStateType = {
     page: number,
     pageCount: number,
 }
-type ActionType = GetPacksActionType | ChangePageActionType
+type ActionType = GetPacksActionType 
 
 export const packsReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case "GET_PACKS":
             return { ...state, ...action.data }
-        case "CHANGE_PAGE_VALUE":
-            return {...state,pageCount:action.value}
             default:
             return { ...state }
     }
@@ -54,9 +52,9 @@ type GetPacksActionType = {
 
 export const getPacksAC = (data: InitialStateType) => ({ type: "GET_PACKS", data })
 
-export const getPacksTC = (): any => (dispatch: any) => {
+export const getPacksTC = (pageCount:number,packsCount:number): any => (dispatch: any) => {
     dispatch(progressAC('progress'))
-    packsAPI.getPacks()
+    packsAPI.getPacks(pageCount,packsCount)
         .then(res => {
             dispatch(getPacksAC(res.data))
         })
@@ -64,13 +62,5 @@ export const getPacksTC = (): any => (dispatch: any) => {
             dispatch(progressAC(null))
         })
 }
-type ChangePageActionType = ReturnType<typeof changePageAC>
-export const changePageAC = (value: number) => ({ type: "CHANGE_PAGE_VALUE", value } as const)
 
-export const changePageTC = (value: number): any => (dispatch: any) => {
-    packsAPI.getCurrentPage(value)
-    .then(res=>{
-        dispatch(getPacksAC(res.data))
-    })
 
-}

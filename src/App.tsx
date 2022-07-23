@@ -6,15 +6,18 @@ import { Routing } from './UI/routing/Routing';
 import { LoginPage } from './UI/pages/loginPage/LoginPage';
 import { Footer } from './UI/components/footer/Footer';
 
+
 function App() {
 
   
 
   return (
     <div className="App">
+      
       <Header />
       <Routing />
       <Footer />
+      
     </div>
   );
 }

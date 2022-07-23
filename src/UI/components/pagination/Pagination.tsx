@@ -7,7 +7,7 @@ type PaginationPropsType = {
     getPage: (pageCount: number) => void
 }
 
-export const Pagination = ({ pageCount, getPage }: PaginationPropsType) => {
+export const Pagination = React.memo(({ pageCount, getPage }: PaginationPropsType) => {
 
 const getP =(pageCount:number)=>{
     getPage(pageCount)
@@ -15,7 +15,7 @@ const getP =(pageCount:number)=>{
 
     const elementsOnPage = pageCount
     let paginationOfPages: Array<number> = []
-    for (let i = 0; i <= elementsOnPage; i++) {
+    for (let i = 1; i <= elementsOnPage; i++) {
         paginationOfPages.push(i)
     }
    
@@ -29,4 +29,4 @@ const getP =(pageCount:number)=>{
             })}
         </div>
     )
-}
+})

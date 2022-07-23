@@ -10,7 +10,7 @@ export const PackList = () => {
     const packs = useSelector<AppRootStateType, Array<PackType> | null>(state => state.packs.cardPacks)
 
     const getPacks = () => {
-        dispatch(getPacksTC())
+        dispatch(getPacksTC(1,10))
     }
 
     return (

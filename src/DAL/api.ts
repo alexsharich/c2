@@ -41,10 +41,28 @@ export const API = {
     }
 }
 export const packsAPI = {
-    getPacks(){
-        return instance.get('cards/pack?page=2&pageCount=10')
+    getPacks(pageCount:number=1,packCount:number=10) {
+        return instance.get(`cards/pack?page=${pageCount}&pageCount=${packCount}`)
     },
-    getCurrentPage(value:number){
-        return instance.get(`cards/pack?page=${value}&pageCount=10`)
+    createPack() {
+        return instance.post('cards/pack', { name: 'new pack', deckCover: '' })
+    },
+    deletePack(id: string) {
+        return instance.delete(`cards/pack?id=${id}`)
+    },
+    updatePack(id: string, name: string) {
+        return instance.put('cards/pack', { _id: id, name: name })
+    },
+    getCard() {
+        return instance.get('cards/card')
+    },
+    createCard() {
+        return instance.post('cards/card')
+    },
+    deleteCard(id: string) {
+        return instance.delete(`cards/card?id=${id}`)
+    },
+    updateCard(id: string) {
+        return instance.put('cards/card', { id })
     }
 }
