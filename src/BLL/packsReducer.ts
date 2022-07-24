@@ -40,6 +40,7 @@ export const packsReducer = (state: InitialStateType = initialState, action: Act
     switch (action.type) {
         case "GET_PACKS":
             return { ...state, ...action.data }
+            
             default:
             return { ...state }
     }

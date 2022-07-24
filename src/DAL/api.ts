@@ -41,8 +41,14 @@ export const API = {
     }
 }
 export const packsAPI = {
-    getPacks(pageCount:number=1,packCount:number=10) {
+    getPacks(pageCount: number = 10, packCount: number = 10) {
         return instance.get(`cards/pack?page=${pageCount}&pageCount=${packCount}`)
+    },
+    getCurrentPage(value: number) {
+        return instance.get(`cards/pack?page=${value}`)
+    },
+    getCurentPacksValue(packsValue: number) {
+        return instance.get(`cards/pack?pageCount=${packsValue}`)
     },
     createPack() {
         return instance.post('cards/pack', { name: 'new pack', deckCover: '' })

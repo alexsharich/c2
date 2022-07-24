@@ -1,0 +1,55 @@
+.basicModalStyle {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: .9;
+    /* position: fixed; */
+    z-index: 2;
+    margin: 0 auto;
+    
+}
+
+.modalContentBlock {
+    width: 400px;
+    height: 500px;
+    position: relative;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 20%;
+    left: 35%;
+}
+
+.closeModalButton {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    left: 350px;
+    top: -20px;
+}
+.modalContent{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(60, 171, 134);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.closeModalBlock{
+    position: relative;
+
+}
+.modalHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: blueviolet;
+    width: 100%;
+    height: 20%;
+}

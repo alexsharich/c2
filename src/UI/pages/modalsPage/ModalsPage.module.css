@@ -1,0 +1,11 @@
+.buttonStyle{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    color: white;
+    border-radius: 50%;
+    margin: 10px;
+    font-size: large;
+    cursor: pointer;
+    opacity: .8;
+}

@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { authReducer } from "./authReducer";
 import { changePasswordReducer } from "./changePasswordReducer";
 import { loginReducer } from "./loginReducer";
+import { modalReducer } from "./modalReducer";
 import { packsReducer } from "./packsReducer";
 import { profileReducer } from "./profileReducer";
 import { progressReducer } from "./progressReducer";
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
     auth:authReducer,
     progress:progressReducer,
     packs:packsReducer,
+    modal:modalReducer
   /*   registration:registrationReducer,
     profile:profileReducer,
     changePassword:changePasswordReducer */

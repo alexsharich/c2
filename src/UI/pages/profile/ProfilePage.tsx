@@ -16,7 +16,7 @@ export const ProfilePage = () => {
     const profile = useSelector<AppRootStateType, ProfileType>(state => state.profile)
     const isAuth = useSelector<AppRootStateType, boolean>(state => state.auth.auth)
     const progress = useSelector<AppRootStateType, ProgressType>(state => state.progress.progress)
-    const pageCount = useSelector<AppRootStateType, number>(state => state.packs.pageCount)
+    const pageCount = useSelector<AppRootStateType, number>(state => state.packs.page)
     const dispatch = useDispatch()
     const packsValueFromState = useSelector<AppRootStateType, number>(state => state.packs.pageCount)
 

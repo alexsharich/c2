@@ -35,6 +35,7 @@
   justify-content: center;
   width: 100vw;
   height: 600px;
+  z-index: 1;
 }
 
 .App {
