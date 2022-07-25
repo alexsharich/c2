@@ -1,7 +1,7 @@
 const initialState = {
     progress: null
 }
-type InitialStateType = {
+export type InitialStateType = {
     progress: ProgressType
 }
 export type ProgressType = 'load' | 'progress' | 'error' | null

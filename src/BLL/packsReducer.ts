@@ -26,7 +26,7 @@ export type PackType = {
     updated: string,
     __v: number,
 }
-type InitialStateType = {
+export type InitialStateType = {
     cardPacks: Array<PackType> | null,
     cardPacksTotalCount: number,
     maxCardsCount: number,

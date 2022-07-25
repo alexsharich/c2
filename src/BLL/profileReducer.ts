@@ -27,7 +27,7 @@ export type ProfileType ={
     rememberMe: boolean,
     error: string | null
 }
-type initialStateType = {
+export type InitialStateType = {
     _id: string,
     email: string,
     name: string,
@@ -41,7 +41,7 @@ type initialStateType = {
     error: string | null
 }
 
-export const profileReducer = (state: initialStateType, action: ActionType): initialStateType => {
+export const profileReducer = (state: InitialStateType, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'SET_PROFILE':
             return { ...state,

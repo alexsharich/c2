@@ -2,7 +2,7 @@
 const initialState = {
     auth: false
 }
-type InitialStateType = {
+export type InitialStateType = {
     auth: boolean
 }
 type ActionType = AuthActiontype

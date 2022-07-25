@@ -1,7 +1,7 @@
 import React from "react";
 
 
-type InitialStateType = {
+export type InitialStateType = {
     isModal: boolean,
     isModal1: boolean,
     isModal2: boolean
