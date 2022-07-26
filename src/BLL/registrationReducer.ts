@@ -4,11 +4,15 @@ import { progressAC } from "./progressReducer"
 
 type ActionType = RegisterActionType
 
+const initialState={
+    
+}
+
 type InitialStateType = {
 
 }
 
-export const registrationReducer = (state: InitialStateType, action: ActionType): InitialStateType => {
+export const registrationReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'REGISTER':
             return { ...state }

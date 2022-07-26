@@ -10,9 +10,9 @@ type ActionType = AuthActiontype
 export const authReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'AUTH':
-            return { ...state,auth:action.isAuth }
+            return { ...state, auth: action.isAuth }
         default:
-            return { ...state }
+            return state
     }
 }
 

@@ -12,7 +12,7 @@ export const progressReducer = (state: InitialStateType = initialState, action: 
         case 'SET_PROGRESS':
             return { ...state,progress:action.progress }
         default:
-            return { ...state }
+            return state
     }
 
 }

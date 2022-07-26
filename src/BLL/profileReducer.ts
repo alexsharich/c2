@@ -41,13 +41,13 @@ export type InitialStateType = {
     error: string | null
 }
 
-export const profileReducer = (state: InitialStateType, action: ActionType): InitialStateType => {
+export const profileReducer = (state: InitialStateType =initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'SET_PROFILE':
             return { ...state,
                 ...action.data}
         default:
-            return {...state}
+            return state
     }
 }
 

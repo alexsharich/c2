@@ -30,7 +30,7 @@ export const modalReducer = (state: InitialStateType = initialState, action: Act
             return { ...state, isModal2: true }
 
         default:
-            return { ...state }
+            return state
     }
 }
 type SetModalActionType = ReturnType<typeof setModalAC>

@@ -1,7 +1,7 @@
 
 type ActionType = ChangePasswordActionType
 
-export const InitialState = {
+export const initialState = {
     password: 'hiden password'
 }
 
@@ -9,7 +9,7 @@ export type InitialStateType = {
     password: string
 }
 
-export const changePasswordReducer = (state: InitialStateType, action: ActionType): InitialStateType => {
+export const changePasswordReducer = (state: InitialStateType =initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case 'CHANGE_PASSWORD':
             return { ...state, password: action.newPassword }

@@ -1,4 +1,3 @@
-import { Dispatch } from "redux"
 import { API } from "../DAL/api"
 import { authAC } from "./authReducer"
 import { setProfileAC } from "./profileReducer"
@@ -35,12 +34,14 @@ export type initialStateType = {
     created: any
 }
 
-export const loginReducer = (state: initialStateType, action: ActionType): initialStateType => {
+export const loginReducer = (state: initialStateType = initialState, action: ActionType): initialStateType => {
     switch (action.type) {
-        case 'LOGIN':
+        case 'LOGIN': {
             return { ...state, ...action.data }
+        }
+
         default:
-            return { ...state }
+            return state
     }
 }
 

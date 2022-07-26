@@ -34,15 +34,15 @@ export type InitialStateType = {
     page: number,
     pageCount: number,
 }
-type ActionType = GetPacksActionType 
+type ActionType = GetPacksActionType
 
 export const packsReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {
         case "GET_PACKS":
             return { ...state, ...action.data }
-            
-            default:
-            return { ...state }
+
+        default:
+            return state
     }
 }
 
@@ -53,9 +53,9 @@ type GetPacksActionType = {
 
 export const getPacksAC = (data: InitialStateType) => ({ type: "GET_PACKS", data })
 
-export const getPacksTC = (pageCount:number,packsCount:number): any => (dispatch: any) => {
+export const getPacksTC = (pageCount: number, packsCount: number): any => (dispatch: any) => {
     dispatch(progressAC('progress'))
-    packsAPI.getPacks(pageCount,packsCount)
+    packsAPI.getPacks(pageCount, packsCount)
         .then(res => {
             dispatch(getPacksAC(res.data))
         })
