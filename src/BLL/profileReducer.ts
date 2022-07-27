@@ -52,5 +52,4 @@ export const profileReducer = (state: InitialStateType =initialState, action: Ac
 }
 
 type SetProfileActionType = ReturnType<typeof setProfileAC>
-
 export const setProfileAC = (data: any) => ({ type: 'SET_PROFILE', data } as const)

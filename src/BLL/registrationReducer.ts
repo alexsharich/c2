@@ -4,8 +4,8 @@ import { progressAC } from "./progressReducer"
 
 type ActionType = RegisterActionType
 
-const initialState={
-    
+const initialState = {
+
 }
 
 type InitialStateType = {
@@ -22,7 +22,6 @@ export const registrationReducer = (state: InitialStateType = initialState, acti
 }
 
 type RegisterActionType = ReturnType<typeof registerAC>
-
 export const registerAC = (data: any) => ({ type: 'REGISTER', data } as const)
 
 export const registerTC = (email: string, password: string): any => (dispatch: any) => {

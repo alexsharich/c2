@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export type InitialStateType = {
     isModal: boolean,
     isModal1: boolean,
@@ -22,13 +21,10 @@ export const modalReducer = (state: InitialStateType = initialState, action: Act
                 isModal1: action.isModal,
                 isModal2: action.isModal,
             }
-
-
         case "SET_MODAL1":
             return { ...state, isModal1: true }
         case "SET_MODAL2":
             return { ...state, isModal2: true }
-
         default:
             return state
     }

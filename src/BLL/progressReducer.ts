@@ -18,6 +18,5 @@ export const progressReducer = (state: InitialStateType = initialState, action: 
 }
 
 type ProgressActionType = ReturnType<typeof progressAC>
-
 export const progressAC = (progress: ProgressType) => ({ type: 'SET_PROGRESS',progress } as const)
 

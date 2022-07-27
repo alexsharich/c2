@@ -19,5 +19,4 @@ export const changePasswordReducer = (state: InitialStateType =initialState, act
 }
 
 type ChangePasswordActionType = ReturnType<typeof changePasswordAC>
-
 export const changePasswordAC = (newPassword: string) => ({ type: 'CHANGE_PASSWORD', newPassword } as const)

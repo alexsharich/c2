@@ -3,7 +3,6 @@ import { packsAPI } from "../DAL/api";
 import { authAC } from "./authReducer";
 import { progressAC } from "./progressReducer";
 
-
 const initialState = {
     cardPacks: null,
     cardPacksTotalCount: 14,
@@ -40,7 +39,6 @@ export const packsReducer = (state: InitialStateType = initialState, action: Act
     switch (action.type) {
         case "GET_PACKS":
             return { ...state, ...action.data }
-
         default:
             return state
     }

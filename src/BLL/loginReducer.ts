@@ -39,14 +39,12 @@ export const loginReducer = (state: initialStateType = initialState, action: Act
         case 'LOGIN': {
             return { ...state, ...action.data }
         }
-
         default:
             return state
     }
 }
 
 type LoginActionType = ReturnType<typeof loaginAC>
-
 export const loaginAC = (data: any) => ({ type: 'LOGIN', data } as const)
 
 export const loginTC = (email: string, password: string, rememberMe: boolean): any => {
